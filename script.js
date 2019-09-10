@@ -18,6 +18,8 @@ function showStuff(element) {
 
 
   console.log(element.feed.entry)
+  console.log(element.feed.entry)
+
 
 
 
