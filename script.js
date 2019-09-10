@@ -10,16 +10,16 @@ fetch(endPoint).then(res => {
   return res.json()
 }).then(showStuff);
 
+
+
+
 fetch(endPointTwo).then(res => {
   return res.json()
 }).then(showStuff);
 
-function showStuff(element) {
+function showStuff(dataObject) {
 
-
-  console.log(element.feed.entry)
-
-
+  console.log(dataObject.feed.entry)
 
 
 }
