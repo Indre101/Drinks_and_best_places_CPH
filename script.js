@@ -2,10 +2,28 @@ const sreadsheetId = "1rTkF6MEuG7v43VAXdnBuQ_3KKtWaMrP03lYvzobzF6k";
 const endPoint = `https://spreadsheets.google.com/feeds/list/${sreadsheetId}/1/public/values?alt=json`;
 const endPointTwo = `https://spreadsheets.google.com/feeds/list/${sreadsheetId}/2/public/values?alt=json`;
 
-const template = document.querySelector("template").content;
-// const placeInfo = document.querySelector(".placeInfo").content;
+
+
+
+// const template = document.querySelector("template").content;
 const categoryBtnTemplate = document.getElementById("categoryBtnTemplate").content;
-const body = document.querySelector("body");
+
+
+// CATEGORIES JUST NAME AND ITS CONTAINER
+const categoryNameTemplate = document.querySelector(".categoryNameTemplate").content;
+
+
+
+// DRINKS AND PLACE PAGE
+const drinksListPageTemplate = document.querySelector(".categoryNameTemplate").content;
+const parentDrinkCategoriesAndDrinks = document.querySelector(".drinkCategoriesAndDrinks");
+
+
+
+// ONE DRINK TEMPLATE
+const oneDrinkTemplate = document.querySelector(".oneDrinkTemplate").content;
+const drinksListContainer = document.querySelector(".drinksListContainer");
+
 
 
 
@@ -41,13 +59,15 @@ function showStuff(dataObject) {
 
     const categoryBtnTemplateClone = categoryBtnTemplate.cloneNode(true);
     categoryBtnTemplateClone.querySelector("button").textContent = drinkObj;
-
     document.querySelector(".categoryContainer").prepend(categoryBtnTemplateClone);
 
+
+
+    const cloneDrinksPageTemplate = categoryNameTemplate.cloneNode(true);
+    cloneDrinksPageTemplate.querySelector(".categoryName").textContent = drinkObj;
+    parentDrinkCategoriesAndDrinks.appendChild(cloneDrinksPageTemplate);
+
   })
-
-
-
 
 }
 
@@ -93,19 +113,22 @@ function PlaceObject(placeName, address, drinkId, drinkPrice, placeImg, stars, l
 
 
 
-// function appendDrinkCards(drinkObject) {
+function appendDrinkCards(drinkObject) {
 
-//   // CLONE OF DRINKS TEMPLATE
-//   const cln = template.cloneNode(true);
-//   const placeInfoContainer = cln.querySelector(".placeContainer")
+  //   // CLONE OF DRINKS TEMPLATE
+  // const clnDrink = drinksListPageTemplate.cloneNode(true);
+  //   const placeInfoContainer = cln.querySelector(".placesListContainer")
 
 
-//   cln.querySelector("h4").textContent = drinkObject.drinkName;
-//   cln.querySelector(".container").onclick = function () {
-//     placeInfoContainer.classList.toggle("d-none");
+  // clnDrink.querySelector("drinkName").textContent = drinkObject.drinkname;
+  // clnDrink.querySelector(".oneDrinkContainer").onclick = function () {
+  //   placeInfoContainer.classList.toggle("d-none");
 
-//   }
+}
 
+
+// console.log(drinkObject)
+// clnDrink.querySelector(".drinkName").textContent = drinkObject.drinkName;
 
 //   fetch(endPointTwo)
 //     .then(res => {
@@ -138,6 +161,6 @@ function PlaceObject(placeName, address, drinkId, drinkPrice, placeImg, stars, l
 
 
 
-//   body.appendChild(cln);
+//   parentsDrinksSection.appendChild(cln);
 
 // }
