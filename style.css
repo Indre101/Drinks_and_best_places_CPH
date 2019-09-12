@@ -42,3 +42,8 @@
 .oneDrinkContainer {
   border: 1px solid;
 }
+
+
+.drinksListContainer {
+  display: flex;
+}
