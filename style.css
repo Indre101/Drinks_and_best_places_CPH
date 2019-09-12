@@ -1,28 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
 .landingPage {
-  background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+    background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
 .logo {
-  width: 200px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 50%;
-
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
 .d-none {
-  display: none;
+    display: none;
 }
 
 
 .categoryBtn {
+<<<<<<< HEAD
   width: 200px;
   height: 2rem;
 }
@@ -101,3 +105,37 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+=======
+    width: 200px;
+    height: 2rem;
+    margin: 0.5em;
+    border-radius: 20px;
+    border-style: none;
+    background-color
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.categoryContainer {
+    display: flex;
+    width: 90vw;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+main h1,h2{
+    color: white;
+    text-align: center;
+
+}
+main h1 {
+  font-size: 40px;
+}
+
+main h2 {
+    font-size: 25px;
+}
+
+>>>>>>> stylelanding
