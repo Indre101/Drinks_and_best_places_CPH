@@ -1,3 +1,28 @@
+.landingPage {
+  background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.logo {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 50%;
+
+}
+
 .d-none {
   display: none;
+}
+
+
+.categoryBtn {
+  width: 200px;
+  height: 2rem;
 }
