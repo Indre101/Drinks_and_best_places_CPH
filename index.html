@@ -2,42 +2,41 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 
-  <style>
-    .container {
-      display: flex;
-      flex-direction: row;
-      border: 1px solid;
-    }
-  </style>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid;
+        }
+
+    </style>
 </head>
 
 <body>
 
+    <main class="landingPage">
+        <article class="logo"></article>
+
+        <h1>Drinks in Copenhagen and the best places to have them</h1>
+        <h2>I feel like...</h2>
+
+        <article class="categoryContainer">
+            <template id="categoryBtnTemplate">
+                <button class="categoryBtn">Coffee</button>
+            </template>
+
+            <button class="categoryBtn">All</button>
+        </article>
+    </main>
 
 
-  <main class="landingPage">
-    <article class="logo"></article>
-
-      <h1>Drinks in Copenhagen and the best places to have them</h1>
-      <h2>I feel like...</h2>
-
-    <article class="categoryContainer">
-      <template id="categoryBtnTemplate">
-        <button class="categoryBtn">Coffee</button>
-      </template>
-
-      <button class="categoryBtn">All</button>
-    </article>
-  </main>
-
-
-<!-- <article class="drinkCategoriesAndDrinks">
+    <!-- <article class="drinkCategoriesAndDrinks">
 <section class="checkbox">
        <label class="container">Non-Alcoholic
   <input type="checkbox">
@@ -65,17 +64,17 @@
 
 
     <template class="categoryNameTemplate">
-      <h2 class="categoryName">Coffe</h2>
+        <h2 class="categoryName">Coffe</h2>
     </template>
 
     <section class="drinksListContainer">
-      <template class="oneDrinkTemplate">
-        <section class="oneDrinkContainer">
-          <img class="drinkImg" src="" alt="">
-          <h3 class="drinkName"></h3>
-        </section>
-      </template>
-      <!--     
+        <template class="oneDrinkTemplate">
+            <section class="oneDrinkContainer">
+                <img class="drinkImg" src="" alt="">
+                <h3 class="drinkName"></h3>
+            </section>
+        </template>
+        <!--
           <template class="placeInfo">
             <div class="drinkname"></div>
             <div class="placeName"></div>
@@ -85,7 +84,7 @@
           </template>  -->
     </section>
 
-  </article>
+    </article>
 
 
 
@@ -95,7 +94,7 @@
 
 
 
-  <!-- 
+    <!--
   <template>
     <div class="container">
       <h4></h4>
@@ -117,7 +116,7 @@
   <div class="category"></div> -->
 
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
