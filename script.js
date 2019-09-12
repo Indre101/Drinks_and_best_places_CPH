@@ -49,15 +49,14 @@ function showStuff(dataObject) {
     drinkObjectArray.push(drinksObject);
     categoryNamesArr.push(drinksObject.category);
 
-    appendDrinkCards(drinksObject);
-
-
   })
 
 
 
 
   const filteredCategoriesNamesOnly = filteredCategoriesArray();
+
+
 
   filteredCategoriesNamesOnly.forEach(drinkObj => {
 
@@ -66,10 +65,22 @@ function showStuff(dataObject) {
     document.querySelector(".categoryContainer").prepend(categoryBtnTemplateClone);
 
 
-
+    // DRINKS PAGE
     const cloneDrinksPageTemplate = categoryNameTemplate.cloneNode(true);
     cloneDrinksPageTemplate.querySelector(".categoryName").textContent = drinkObj;
+
+
+
+    drinkObjectArray.forEach(drinkCategory => {
+      if (drinkCategory.category == drinkObj) {
+        appendDrinkCards(drinkCategory, cloneDrinksPageTemplate.querySelector(".drinksListContainer"));
+      }
+
+    })
+
     parentDrinkCategoriesAndDrinks.appendChild(cloneDrinksPageTemplate);
+
+
 
   })
 
@@ -117,11 +128,11 @@ function PlaceObject(placeName, address, drinkId, drinkPrice, placeImg, stars, l
 
 
 
-function appendDrinkCards(drinkObject) {
+function appendDrinkCards(drinkObject, drinkCardContainer) {
 
   //   // CLONE OF DRINKS TEMPLATE
 
-  console.log(drinkObject);
+  // console.log(drinkObject);
 
   const clnDrink = oneDrinkTemplate.cloneNode(true);
   clnDrink.querySelector(".drinkImg").src = `./img-icons/img/${drinkObject.image}.png`
@@ -171,6 +182,6 @@ function appendDrinkCards(drinkObject) {
 
 
 
-  drinksListContainer.appendChild(clnDrink);
+  drinkCardContainer.appendChild(clnDrink);
 
 }
