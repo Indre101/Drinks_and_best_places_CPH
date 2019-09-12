@@ -26,12 +26,12 @@
 
 
 .categoryBtn {
+
     width: 200px;
     height: 2rem;
     margin: 0.5em;
     border-radius: 20px;
     border-style: none;
-    background-color
     color: white;
     font-weight: bold;
     text-transform: uppercase;
@@ -56,5 +56,11 @@ main h1 {
 
 main h2 {
     font-size: 25px;
+}
+
+
+.categoryName {
+  width: 100%;
+  background-color: blanchedalmond;
 }
 
