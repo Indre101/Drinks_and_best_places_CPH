@@ -25,6 +25,9 @@ const oneDrinkTemplate = document.querySelector(".oneDrinkTemplate").content;
 const drinksListContainer = document.querySelector(".drinksListContainer");
 
 
+// PLACE LIST TEMPLATE FOR ATTACHING INSIDE DRINK CARD
+let placeInfo = document.querySelector(".placeInfo").content;
+
 
 
 let drinkObjectArray = [];
@@ -125,48 +128,45 @@ function appendDrinkCards(drinkObject) {
   clnDrink.querySelector(".drinkName").textContent = drinkObject.drinkName;
 
 
+  const placeList = clnDrink.querySelector(".placeList")
 
 
-  //   const placeInfoContainer = cln.querySelector(".placesListContainer")
+  clnDrink.querySelector(".drinkName").textContent = drinkObject.drinkname;
+  clnDrink.querySelector(".oneDrinkContainer").onclick = function () {
+    placeList.classList.toggle("d-none");
+  }
 
 
-  // clnDrink.querySelector("drinkName").textContent = drinkObject.drinkname;
-  // clnDrink.querySelector(".oneDrinkContainer").onclick = function () {
-  //   placeInfoContainer.classList.toggle("d-none");
 
-  // }
+  clnDrink.querySelector(".drinkName").textContent = drinkObject.drinkName;
 
+  fetch(endPointTwo)
+    .then(res => {
+      return res.json()
+    })
+    .then(placeObject => {
 
-  // console.log(drinkObject)
-  // clnDrink.querySelector(".drinkName").textContent = drinkObject.drinkName;
+      let placeArray = [];
 
-  //   fetch(endPointTwo)
-  //     .then(res => {
-  //       return res.json()
-  //     })
-  //     .then(placeObject => {
+      placeObject.feed.entry.forEach(place => {
 
-  //       let placeArray = [];
-
-  //       placeObject.feed.entry.forEach(place => {
-
-  //         if (drinkObject.drinkId == place.gsx$drinkid.$t) {
-  //           let newPlace = new PlaceObject(place.gsx$placename.$t, place.gsx$adddress.$t, place.gsx$drinkid.$t, place.gsx$drinkprice.$t, place.gsx$imageoftheplace.$t, place.gsx$starrate.$t, place.gsx$linktotheplacewebsite.$t, place.gsx$placedescribtion.$t)
-  //           placeArray.push(newPlace);
+        if (drinkObject.drinkId == place.gsx$drinkid.$t) {
+          let newPlace = new PlaceObject(place.gsx$placename.$t, place.gsx$adddress.$t, place.gsx$drinkid.$t, place.gsx$drinkprice.$t, place.gsx$imageoftheplace.$t, place.gsx$starrate.$t, place.gsx$linktotheplacewebsite.$t, place.gsx$placedescribtion.$t)
+          placeArray.push(newPlace);
 
 
-  //         }
-  //       })
+        }
+      })
 
-  //       placeArray.forEach(placeObj => {
+      placeArray.forEach(placeObj => {
 
-  //         let clnPlaceTempate = placeInfo.cloneNode(true);
-  //         clnPlaceTempate.querySelector(".placeName").textContent = placeObj.placeName
-  //         clnPlaceTempate.querySelector(".drinkPrice").textContent = placeObj.drinkPrice
-  //         placeInfoContainer.appendChild(clnPlaceTempate);
+        let clnPlaceTempate = placeInfo.cloneNode(true);
+        clnPlaceTempate.querySelector(".placeName").textContent = placeObj.placeName
+        clnPlaceTempate.querySelector(".drinkPrice").textContent = placeObj.drinkPrice
+        placeList.appendChild(clnPlaceTempate);
 
-  //       })
-  //     })
+      })
+    })
 
 
 
