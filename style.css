@@ -9,6 +9,11 @@
 }
 
 
+.drinkImg {
+  width: 300px;
+}
+
+
 .logo {
   width: 200px;
   height: 200px;
@@ -31,4 +36,9 @@
 .categoryName {
   width: 100%;
   background-color: blanchedalmond;
+}
+
+
+.oneDrinkContainer {
+  border: 1px solid;
 }
