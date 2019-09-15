@@ -3,9 +3,11 @@
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    font-family: 'Roboto', sans-serif;
-}
 
+}
+:root{
+    --h1:font-family: 'Roboto', sans-serif;
+}
 .landingPage {
     background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
     background-size: cover;
@@ -16,7 +18,10 @@ body {
     align-items: center;
 }
 
-
+h1{
+font-family: var(--h1);
+text-transform: uppercase;
+}
 .drinkImg {
     width: 300px;
 }
