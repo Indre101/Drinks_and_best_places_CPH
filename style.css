@@ -9,6 +9,7 @@ body {
     --breadText: "Raleway", sans-serif;
     --drink-name-color: #EFE7E7;
 }
+
 /*because the bg image is a class, i can't make it repeat for the rest of the page- i think that's why*/
 .landingPage {
     background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
@@ -21,13 +22,13 @@ body {
     align-items: center;
 }
 
-
 h1,
 h3 {
     color: var(--drink-name-color);
     font-family: var(--headline);
     text-transform: uppercase;
 }
+
 /*I had so much trouble with this, since i couldn't remove classes and change them- so i'll have to do that when we're all together. */
 .placeList {
     font-family: var(--breadText);
@@ -50,7 +51,7 @@ h3 {
 .logo {
     width: 200px;
     height: 200px;
-/*
+    /*
     background-image: url(img-icons/logo.jpg);
     background-size:contain;
 */
@@ -60,6 +61,7 @@ h3 {
 .d-none {
     display: none;
 }
+
 /*For some reason the "all" btn doesn't think there's any space for it... Can't figure out why*/
 .categoryBtn {
     border-style: none;
@@ -77,7 +79,7 @@ h3 {
 
 .categoryName {
     width: 100%;
-    margin-left:15px;
+    margin-left: 15px;
 }
 
 .oneDrinkContainer {
