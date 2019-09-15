@@ -21,11 +21,12 @@ body {
 }
 
 h1, h3{
+    color: var(--drink-name-color);
     font-family: var(--headline);
     text-transform: uppercase;
 }
 h3{
-   color: var(--drink-name-color);
+
 }
 .placeList{
     font-family: var(--breadText);
@@ -55,7 +56,6 @@ h3{
 
 .categoryName {
     width: 100%;
-    background-color: blanchedalmond;
 }
 
 
