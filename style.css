@@ -2,13 +2,12 @@
 
 body {
     margin: 0;
-    font-family: 'Raleway', sans-serif;
-    font-family: 'Roboto', sans-serif;
 }
 
 :root {
-    --headline: font-family: 'Roboto', sans-serif;
-    --breadText: font-family: 'Raleway', sans-serif;
+    --headline:"Roboto", sans-serif;
+    --breadText:"Raleway", sans-serif;
+    --drink-name-color: #EFE7E7;
 }
 
 .landingPage {
@@ -21,19 +20,19 @@ body {
     align-items: center;
 }
 
-h1 {
+h1, h3{
     font-family: var(--headline);
     text-transform: uppercase;
 }
-
-.drinkName {
-    font-family: var(--headline);
+h3{
+   color: var(--drink-name-color);
 }
-
+.placeList{
+    font-family: var(--breadText);
+}
 .drinkImg {
     width: 300px;
 }
-
 
 .logo {
     width: 200px;
