@@ -13,6 +13,7 @@ body {
 .landingPage {
     background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
     background-size: cover;
+    background-repeat: repeat-x;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -20,14 +21,13 @@ body {
     align-items: center;
 }
 
+
 h1, h3{
     color: var(--drink-name-color);
     font-family: var(--headline);
     text-transform: uppercase;
 }
-h3{
 
-}
 .placeList{
     font-family: var(--breadText);
 }
@@ -40,30 +40,32 @@ h3{
     height: 200px;
     background-color: #fff;
     border-radius: 50%;
-
 }
 
 .d-none {
     display: none;
 }
 
-
 .categoryBtn {
     width: 200px;
     height: 2rem;
 }
 
-
 .categoryName {
     width: 100%;
 }
 
-
 .oneDrinkContainer {
-    border: 1px solid;
+    margin: 1%;
 }
+.drinkName{
+    background-color: #707070;
+    opacity: 50%;
+    text-align: center;
+    padding: 15px;
+    max-width: 300px;
 
-
+}
 .drinksListContainer {
     display: flex;
     flex-wrap: wrap;
