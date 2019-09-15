@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 .landingPage {
   background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
   background-size: cover;
