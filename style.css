@@ -1,53 +1,58 @@
-body{
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
+body {
     margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
+
 .landingPage {
-  background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+    background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
 .drinkImg {
-  width: 300px;
+    width: 300px;
 }
 
 
 .logo {
-  width: 200px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 50%;
 
 }
 
 .d-none {
-  display: none;
+    display: none;
 }
 
 
 .categoryBtn {
-  width: 200px;
-  height: 2rem;
+    width: 200px;
+    height: 2rem;
 }
 
 
 .categoryName {
-  width: 100%;
-  background-color: blanchedalmond;
+    width: 100%;
+    background-color: blanchedalmond;
 }
 
 
 .oneDrinkContainer {
-  border: 1px solid;
+    border: 1px solid;
 }
 
 
 .drinksListContainer {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
