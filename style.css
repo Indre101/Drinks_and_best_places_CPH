@@ -124,8 +124,14 @@ main h2 {
     width: 200px;
     margin-top: 10px;
     background-color: aliceblue;
+    display: none;
+    position: absolute;
+    z-index: 1;
 }
 
+.show {
+    display: block;
+}
 .container {
     display: flex;
     flex-direction: row;
@@ -199,6 +205,17 @@ main h2 {
 #priceOutput {
     margin-left: 5px;
     margin-bottom: 5px;
+}
+
+/* filter dropdown */
+
+.filterbtn {
+    width: 30px;
+    cursor: pointer;
+}
+.dropdown {
+position: relative;
+  display: inline-block;
 }
 
 /* search bar*/
@@ -276,3 +293,4 @@ main h2 {
   display: flex;
   flex-wrap: wrap;
 }
+

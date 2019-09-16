@@ -30,9 +30,10 @@
 
     </main>
 
-<img src="img-icons/img/filter.png" onclick="dropDown()" class="filterbtn">
-    <article class="drinkCategoriesAndDrinks">
-        <section class="checkbox">
+<section class="dropdown">
+     <img src="img-icons/img/filter.png" onclick="dropDown()" class="filterbtn" alt="filterbtn">
+
+        <section class="checkbox" id="checkbox">
             <label class="container">Non-Alcoholic
                 <input type="checkbox"  id="non-alcoholicInput">
                 <span class="checkmark"></span>
@@ -75,7 +76,7 @@
 
         </section>
 
-
+</section>
 
 
       <section class="search-box">
@@ -191,5 +192,11 @@
     function updateTextInput(val) {
           document.getElementById('priceOutput').value=val;
         }
+
+        function dropDown() {
+            document.getElementById("checkbox").classList.toggle("show");
+        }
+
+
     </script>
 </body></html>
