@@ -13,6 +13,11 @@
 }
 
 
+.drinkImg {
+  width: 300px;
+}
+
+
 .logo {
     width: 200px;
     height: 200px;
@@ -47,6 +52,7 @@
     justify-content: center;
     justify-content: space-between;
 }
+
 
 main h1,h2{
     color: white;
@@ -136,4 +142,16 @@ margin-left: 5px;
 
 #priceRange {
     padding-left: 5px;
+}
+
+
+
+.oneDrinkContainer {
+  border: 1px solid;
+}
+
+
+.drinksListContainer {
+  display: flex;
+  flex-wrap: wrap;
 }
