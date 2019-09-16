@@ -38,42 +38,43 @@
      <img src="img-icons/img/filter.png" onclick="dropDown()" class="filterbtn" alt="filterbtn">
     <section class="checkbox" id="checkbox">
       <label class="container">Non-Alcoholic
-        <input type="checkbox" id="non-alcoholicInput">
+        <input id="non-alcoholInput" type="checkbox" id="non-alcoholicInput">
         <span class="checkmark"></span>
       </label>
 
       <label class="container">Alcoholic
-        <input type="checkbox" id="alcoholicInput">
+        <input id="alcoholInput" type="checkbox" id="alcoholicInput">
         <span class="checkmark"></span>
       </label>
       <br>
 
       <label class="container">Coffee
-        <input type="checkbox" id="coffeeInput">
+        <input id="justCoffee" value="coffee" class="drinkCategryInput" type="checkbox" id="coffeeInput">
         <span class="checkmark"></span>
       </label>
 
 
       <label class="container">Beers
-        <input type="checkbox" id="beersInput">
+        <input id="justBeer" class="drinkCategryInput" value="beers" type="checkbox" id="beersInput">
         <span class="checkmark"></span>
       </label>
 
 
       <label class="container">Cocktails
-        <input type="checkbox" id="cocktailsInput">
+        <input id="justCocktail" class="drinkCategryInput" value="cocktails" type="checkbox" id="cocktailsInput">
         <span class="checkmark"></span>
       </label>
 
       <label class="container">Soft Drinks
-        <input type="checkbox" id="softdrinksInput">
+        <input id="justSoftDrinks" class="drinkCategryInput" value="soft drinks" type="checkbox" id="softdrinksInput">
         <span class="checkmark"></span>
       </label>
       <br>
 
       <label class="container" id="priceRange">Price Range</label>
       <!--   <input id="priceInput" type="range" name="points" min="10" max="100"> -->
-      <input id="priceInput" type="range" name="points" min="10" max="100" onchange="updateTextInput(this.value);">
+      <input id="priceInput" class="drinkCategryInput" type="range" name="points" min="10" max="100"
+        onchange="updateTextInput(this.value);">
       <input id="priceOutput" type="text" value="">
     </section>
 
@@ -88,23 +89,7 @@
 
       </section>
 
-    <form id="form" action="/action_page.php">
-      <input id="alcoholInput" type="checkbox" name="vehicle1" value="alcohol">alcoholic<br>
-      <input id="non-alcoholInput" type="checkbox" name="vehicle2" value="non-alcohol">non-alcohol<br>
-      <input id="justBeer" class="drinkCategryInput" type="checkbox" name="vehicle2" value="beers">Beers<br>
-      <input id="justCocktail" class="drinkCategryInput" type="checkbox" name="vehicle2" value="cocktails">Coctails<br>
-      <input id="justSoftDrinks" class="drinkCategryInput" type="checkbox" name="vehicle2" value="soft drinks">Soft
-      drinks<br>
-      <input id="justCoffee" class="drinkCategryInput" type="checkbox" name="vehicle2" value="coffee">Coffee<br>
-      <input id="priceInput" class="drinkCategryInput" type="range" min="10" max="100" value="">Coffee<br>
 
-
-      <!-- <input id="all" class="drinkCategryInput" type="checkbox" name="vehicle2" value="">All<br> -->
-
-
-      <!-- <input id="priceInput" type="range" name="points" min="10" max="100"> -->
-      <!-- <input type="submit" value="Submit"> -->
-    </form>
 
 
 
@@ -112,6 +97,7 @@
 
 
     <article class="drinkCategoriesAndDrinks">
+      
       <template class="categoryNameTemplate">
         <h2 class="categoryName">Coffe</h2>
         <section class="drinksListContainer">
@@ -119,20 +105,24 @@
       </template>
 
       <template class="oneDrinkTemplate">
-          <section>
-        <section class="oneDrinkContainer ">
-          <img class="drinkImg" src="" alt="">
-          <h3 class="drinkName"></h3>
-            </section>
-          <section class="placeList d-none"></section>
+        <section>
+          <section class="oneDrinkContainer ">
+            <img class="drinkImg" src="" alt="">
+            <h3 class="drinkName"></h3>
           </section>
-
-              </template>
+          <section class="placeList d-none"></section>
+        </section>
+      </template>
 
 
 
       <template class="placeInfo">
         <article class="placeInfoContainer">
+          <div class="placeDescribtion d-none">
+            <p class="describtion">Lorem ipsum dolor sit.</p>
+            <a class="linkToWebsite" href="">Link</a>
+            <button class="closeButton">close</button>
+          </div>
           <div class="drinkname"></div>
           <div class="placeName"></div>
           <div class="placeAdress"></div>
@@ -156,39 +146,9 @@
           <h3 class="drinkName"></h3>
         </section>
       </template>
-      <!--
-          <template class="placeInfo">
-            <div class="drinkname"></div>
-            <div class="placeName"></div>
-            <div class="placeAdress"></div>
-            <div class="stars"></div>
-            <div class="drinkPrice"></div>
-          </template>  -->
     </section>
 
   </article>
-
-
-  <!--
-  <template>
-    <div class="container">
-      <h4></h4>
-      <div class="placeContainer d-none">
-      </div>
-    </div>
-  </template>
-
-  <template class="placeInfo">
-    <div class="drinkname"></div>
-    <div class="placeName"></div>
-    <div class="placeAdress"></div>
-    <div class="stars"></div>
-    <div class="drinkPrice"></div>
-  </template>
-
-
-
-  <div class="category"></div> -->
 
 
   <script src="script.js"></script>
