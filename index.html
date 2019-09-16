@@ -32,18 +32,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
   <article class="secondPage">
 
-    <section class="checkbox">
+ class="dropdown">
+     <img src="img-icons/img/filter.png" onclick="dropDown()" class="filterbtn" alt="filterbtn">
+    <section class="checkbox" id="checkbox">
       <label class="container">Non-Alcoholic
         <input type="checkbox" id="non-alcoholicInput">
         <span class="checkmark"></span>
@@ -54,7 +47,6 @@
         <span class="checkmark"></span>
       </label>
       <br>
-
 
       <label class="container">Coffee
         <input type="checkbox" id="coffeeInput">
@@ -195,9 +187,14 @@
   <script src="script.js"></script>
   <script>
     function updateTextInput(val) {
-      document.getElementById('priceOutput').value = val;
-    }
-  </script>
-</body>
 
-</html>
+          document.getElementById('priceOutput').value=val;
+        }
+
+        function dropDown() {
+            document.getElementById("checkbox").classList.toggle("show");
+        }
+
+
+    </script>
+</body></html>

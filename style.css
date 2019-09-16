@@ -102,12 +102,11 @@ form {}
     display: none;
 }
 
-
-
 .placeInfoContainer {
     margin: 0.5rem;
     border: 1px solid;
     padding: 1rem;
+
 }
 
 
@@ -142,7 +141,15 @@ main h2 {
     border: none;
     width: 200px;
     margin-top: 10px;
-    background-color: aliceblue;
+    background-color: #707070;
+    opacity: 50%;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.show {
+    display: block;
 }
 
 .container {
@@ -154,6 +161,7 @@ main h2 {
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 15px;
+    color: #EFE7E7;
 }
 
 /* Hide the browser's default checkbox */
@@ -197,8 +205,8 @@ main h2 {
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-    left: 9px;
-    top: 5px;
+    left: 5px;
+    top: 3px;
     width: 5px;
     height: 10px;
     border: solid black;
@@ -220,30 +228,44 @@ main h2 {
     margin-bottom: 5px;
 }
 
+/* filter dropdown */
+
+.filterbtn {
+    width: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
 /* search bar*/
 .search-box {
     width: 250px;
     position: relative;
     display: flex;
-    margin-top: 10px;
+    margin: 10px;
+    float: right;
 }
 
 .search-txt {
     width: 100%;
-    border: 2px solid aliceblue;
+    border: 2px solid #707070;
     border-right: none;
     padding: 5px;
     height: 35px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: aliceblue;
+    color: #707070;
 }
 
 .search-btn {
     width: 40px;
     height: 35px;
-    border: 1px solid aliceblue;
-    background-color: aliceblue;
+    border: 1px solid #707070;
+    background-color: #707070;
     align-items: center;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
@@ -271,9 +293,6 @@ main h2 {
     font-size: 1rem;
 }
 
-
-
-
 .categoryName {
     width: 100%;
     margin-left: 15px;
@@ -299,3 +318,4 @@ main h2 {
     display: flex;
     flex-wrap: wrap;
 }
+
