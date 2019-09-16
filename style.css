@@ -53,7 +53,7 @@ h3 {
 
 
 .placeList {
-    font-family: var(--headline);
+    font-family: var(--breadText);
     color: var(--drink-name-color);
     margin-top: 139px;
     padding: 1%;
@@ -325,7 +325,9 @@ main h2 {
 }
 
 .drinksListContainer {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
+    justify-content: space-around;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    grid-gap: 2rem;
 }
-
