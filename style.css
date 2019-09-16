@@ -2,9 +2,24 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
+body {
+    margin: 0;
+    color: white;
+}
+
+:root {
+    --headline: "Roboto", sans-serif;
+    --breadText: "Raleway", sans-serif;
+    --drink-name-color: #EFE7E7;
+}
+
+/*because the bg image is a class, i can't make it repeat for the rest of the page- i think that's why*/
 .landingPage {
     background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
     background-size: cover;
+    background-repeat: repeat-x;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,22 +27,56 @@
     align-items: center;
 }
 
+.secondPage {
 
-.drinkImg {
-  width: 300px;
+    background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
 }
 
+
+h1,
+h3 {
+    color: var(--drink-name-color);
+    font-family: var(--headline);
+    text-transform: uppercase;
+}
+
+/*I had so much trouble with this, since i couldn't remove classes and change them- so i'll have to do that when we're all together. */
+.placeList {
+    font-family: var(--breadText);
+    color: var(--drink-name-color);
+    margin-top: 139px;
+    padding: 1%;
+    background-color: #707070;
+    opacity: 0.7;
+}
+
+
+form {}
+
+.drinkImg {
+    width: 300px;
+}
+
+.drinkPrice {
+    float: right;
+    margin-top: -20px;
+}
 
 .logo {
     width: 200px;
     height: 200px;
     background-color: #fff;
+    /*
+    background-image: url(img-icons/logo.jpg);
+    background-size:contain;
+*/
     border-radius: 50%;
 }
 
 .d-none {
     display: none;
 }
+
 
 .categoryName {
     width: 100%;
@@ -53,13 +102,7 @@
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
-main h1,
-h2 {
-=======
-
 main h1,h2{
->>>>>>> origin/checkbox
     color: white;
     text-align: center;
 
@@ -152,7 +195,6 @@ main h2 {
     padding-left: 5px;
 }
 
-<<<<<<< HEAD
 #priceInput,
 #priceOutput {
     margin-left: 5px;
@@ -193,16 +235,44 @@ main h2 {
     width: 25px;
     height: 25px;
     margin: 2px;
-=======
-
-
-.oneDrinkContainer {
-  border: 1px solid;
+}
+/*For some reason the "all" btn doesn't think there's any space for it... Can't figure out why*/
+.categoryBtn {
+    border-style: none;
+    border-radius: 50px;
+    margin: 0.5%;
+    width: 150px;
+    height: 2rem;
+    background-color: #707070;
+    opacity: 0.7;
+    color: var(--drink-name-color);
+    font-family: var(--headline);
+    text-transform: uppercase;
+    font-size: 1rem;
 }
 
+.categoryName {
+    width: 100%;
+    margin-left: 15px;
+}
+
+.oneDrinkContainer {
+    margin: 1%;
+    margin-bottom: 130px;
+}
+
+.drinkName {
+    background-color: #707070;
+    opacity: 0.8;
+    text-align: center;
+    padding: 15px;
+    max-width: 300px;
+    max-height: 80px;
+    margin-top: -65%;
+
+}
 
 .drinksListContainer {
   display: flex;
   flex-wrap: wrap;
->>>>>>> origin/checkbox
 }

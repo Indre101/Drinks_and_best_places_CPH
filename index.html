@@ -13,8 +13,9 @@
 
 <body>
 
-    <main class="landingPage">hi
-        <article class="logo"></article>dfa
+
+    <main class="landingPage">
+        <article class="logo"></article>
 
         <h1>Drinks in Copenhagen and the best places to have them</h1>
         <h2>I feel like...</h2>
@@ -87,34 +88,57 @@
 
 
 
+  <article class="secondPage">
 
-    <template class="categoryNameTemplate">
-      <h2 class="categoryName">Coffe</h2>
-      <section class="drinksListContainer">
-      </section>
 
-    </template>
+    <form id="form" action="/action_page.php">
+      <input id="alcoholInput" type="checkbox" name="vehicle1" value="alcohol">alcoholic<br>
+      <input id="non-alcoholInput" type="checkbox" name="vehicle2" value="non-alcohol">non-alcohol<br>
+      <input id="justBeer" class="drinkCategryInput" type="checkbox" name="vehicle2" value="beers">Beers<br>
+      <input id="justCocktail" class="drinkCategryInput" type="checkbox" name="vehicle2" value="cocktails">Coctails<br>
+      <input id="justSoftDrinks" class="drinkCategryInput" type="checkbox" name="vehicle2" value="soft drinks">Soft
+      drinks<br>
+      <input id="justCoffee" class="drinkCategryInput" type="checkbox" name="vehicle2" value="coffee">Coffee<br>
+      <input id="priceInput" class="drinkCategryInput" type="range" min="10" max="100" value="">Coffee<br>
 
-    <template class="oneDrinkTemplate">
-      <section class="oneDrinkContainer ">
-        <img class="drinkImg" src="" alt="">
-        <h3 class="drinkName"></h3>
-        <section class="placeList d-none"></section>
-    </template>
 
-    <template class="placeInfo">
-      <div class="drinkname"></div>
-      <div class="placeName"></div>
-      <div class="placeAdress"></div>
-      <div class="stars"></div>
-      <div class="drinkPrice"></div>
-    </template>
+      <!-- <input id="all" class="drinkCategryInput" type="checkbox" name="vehicle2" value="">All<br> -->
+
+
+      <!-- <input id="priceInput" type="range" name="points" min="10" max="100"> -->
+      <!-- <input type="submit" value="Submit"> -->
+    </form>
+
+
+
+    <!-- DRINKS AND CATEGORIES -->
+
+
+    <article class="drinkCategoriesAndDrinks">
+      <template class="categoryNameTemplate">
+        <h2 class="categoryName">Coffe</h2>
+        <section class="drinksListContainer">
+        </section>
+      </template>
+
+      <template class="oneDrinkTemplate">
+        <section class="oneDrinkContainer ">
+          <img class="drinkImg" src="" alt="">
+          <h3 class="drinkName"></h3>
+          <section class="placeList d-none"></section>
+      </template>
+
+      <template class="placeInfo">
+        <div class="drinkname"></div>
+        <div class="placeName"></div>
+        <div class="placeAdress"></div>
+        <div class="stars"></div>
+        <div class="drinkPrice"></div>
+      </template>
+    </article>
+
+
   </article>
-
-
-
-<<<<<<< HEAD
-
 
         <template class="categoryNameTemplate">
             <h2 class="categoryName">Coffe</h2>
@@ -138,15 +162,6 @@
         </section>
 
     </article>
-
-
-=======
->>>>>>> origin/checkbox
-
-
-
-
-
 
 
     <!--
