@@ -1,53 +1,107 @@
-.landingPage {
-  background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
+body {
+    margin: 0;
 }
 
+:root {
+    --headline: "Roboto", sans-serif;
+    --breadText: "Raleway", sans-serif;
+    --drink-name-color: #EFE7E7;
+}
+
+/*because the bg image is a class, i can't make it repeat for the rest of the page- i think that's why*/
+.landingPage {
+    background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
+    background-size: cover;
+    background-repeat: repeat-x;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1,
+h3 {
+    color: var(--drink-name-color);
+    font-family: var(--headline);
+    text-transform: uppercase;
+}
+
+/*I had so much trouble with this, since i couldn't remove classes and change them- so i'll have to do that when we're all together. */
+.placeList {
+    font-family: var(--breadText);
+    color: var(--drink-name-color);
+    margin-top: 139px;
+    padding: 1%;
+    background-color: #707070;
+    opacity: 0.7;
+}
 
 
 form {}
 
 .drinkImg {
-  width: 300px;
+    width: 300px;
 }
 
+.drinkPrice {
+    float: right;
+    margin-top: -20px;
+}
 
 .logo {
-  width: 200px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 50%;
-
+    width: 200px;
+    height: 200px;
+    /*
+    background-image: url(img-icons/logo.jpg);
+    background-size:contain;
+*/
+    border-radius: 50%;
 }
 
 .d-none {
-  display: none;
+    display: none;
 }
 
-
+/*For some reason the "all" btn doesn't think there's any space for it... Can't figure out why*/
 .categoryBtn {
-  width: 200px;
-  height: 2rem;
+    border-style: none;
+    border-radius: 50px;
+    margin: 0.5%;
+    width: 150px;
+    height: 2rem;
+    background-color: #707070;
+    opacity: 0.7;
+    color: var(--drink-name-color);
+    font-family: var(--headline);
+    text-transform: uppercase;
+    font-size: 1rem;
 }
-
 
 .categoryName {
-  width: 100%;
-  background-color: blanchedalmond;
+    width: 100%;
+    margin-left: 15px;
 }
-
 
 .oneDrinkContainer {
-  border: 1px solid;
+    margin: 1%;
+    margin-bottom: 130px;
 }
 
+.drinkName {
+    background-color: #707070;
+    opacity: 0.8;
+    text-align: center;
+    padding: 15px;
+    max-width: 300px;
+    max-height: 80px;
+    margin-top: -65%;
+
+}
 
 .drinksListContainer {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
