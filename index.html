@@ -27,32 +27,45 @@
   </main>
 
 
-  <article class="drinkCategoriesAndDrinks">
+  <article class="secondPage">
 
-    <template class="categoryNameTemplate">
-      <h2 class="categoryName">Coffe</h2>
-      <section class="drinksListContainer">
-      </section>
 
-    </template>
+    <form id="form" action="/action_page.php">
+      <input id="alcoholInput" type="checkbox" name="vehicle1" value="alcohol">alcoholic<br>
+      <input id="non-alcoholInput" type="checkbox" name="vehicle2" value="non-alcohol">non-alcohol<br>
+      <input id="priceInput" type="range" name="points" min="10" max="100">
+      <!-- <input type="submit" value="Submit"> -->
+    </form>
 
-    <template class="oneDrinkTemplate">
-      <section class="oneDrinkContainer ">
-        <img class="drinkImg" src="" alt="">
-        <h3 class="drinkName"></h3>
-        <section class="placeList d-none"></section>
-    </template>
 
-    <template class="placeInfo">
-      <div class="drinkname"></div>
-      <div class="placeName"></div>
-      <div class="placeAdress"></div>
-      <div class="stars"></div>
-      <div class="drinkPrice"></div>
-    </template>
+
+    <!-- DRINKS AND CATEGORIES -->
+    <article class="drinkCategoriesAndDrinks">
+
+      <template class="categoryNameTemplate">
+        <h2 class="categoryName">Coffe</h2>
+        <section class="drinksListContainer">
+        </section>
+
+      </template>
+
+      <template class="oneDrinkTemplate">
+        <section class="oneDrinkContainer ">
+          <img class="drinkImg" src="" alt="">
+          <h3 class="drinkName"></h3>
+          <section class="placeList d-none"></section>
+      </template>
+
+      <template class="placeInfo">
+        <div class="drinkname"></div>
+        <div class="placeName"></div>
+        <div class="placeAdress"></div>
+        <div class="stars"></div>
+        <div class="drinkPrice"></div>
+      </template>
+    </article>
+
   </article>
-
-
 
 
 
