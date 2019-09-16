@@ -31,6 +31,16 @@ body {
     background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
 }
 
+.placeDescribtion {
+    background-color: #231e0d;
+    /* display: none; */
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+}
 
 h1,
 h3 {
