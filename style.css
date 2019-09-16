@@ -53,7 +53,7 @@ h3 {
 
 
 .placeList {
-    font-family: var(--breadText);
+    font-family: var(---headline);
     color: var(--drink-name-color);
     margin-top: 139px;
     padding: 1%;
