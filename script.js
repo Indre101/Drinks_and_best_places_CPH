@@ -92,6 +92,24 @@ function addDrinks(drinks) {
 
     parentDrinkCategoriesAndDrinks.appendChild(cloneDrinksPageTemplate);
   });
+
+  const categoriesHeadings = document.querySelectorAll(".categoryName");
+  const navigationButtons = document.querySelectorAll(".categoryLink");
+
+  // ASSIGN ID
+  categoriesHeadings.forEach(e => {
+    e.id = e.textContent.split(" ").join("");
+  });
+
+  // ASSIGN ID'S AS LINKS
+  navigationButtons.forEach(btn => {
+    btn.href = `#${btn.textContent.split(" ").join("")}`;
+  });
+
+  function taketothePart() {}
+
+  console.log(test);
+  console.log(testbtn);
 }
 
 // FILTERING THE CATEGORIES NAMES
