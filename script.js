@@ -287,15 +287,25 @@ function appendDrinkCards(drinkObject, drinkCardContainer) {
       placeObj.placeName;
     clnPlaceTempate.querySelector(".drinkPrice").textContent =
       placeObj.drinkPrice;
-    console.log();
+    console.log(placeObj);
+
     clnPlaceTempate.querySelector(".stars").textContent = `☆ ${placeObj.stars}`;
     clnPlaceTempate.querySelector(".stars").style.color = "yellow";
+    clnPlaceTempate.querySelector(".describtion").textContent =
+      placeObj.description;
+    clnPlaceTempate.querySelector(".linkToWebsite").href = placeObj.link;
 
-    // for (let index = 0; index < placeObj.stars; index++) {
-    //   const span = document.createElement("span");
-    //   span.textContent = "";
-    //   .appendChild(span);
-    // }
+    const placeDescribtion = clnPlaceTempate.querySelector(".placeDescribtion");
+    const closeModalBtn = clnPlaceTempate.querySelector(".closeButton");
+
+    clnPlaceTempate
+      .querySelector(".placeInfoContainer")
+      .addEventListener("click", showModal);
+
+    function showModal() {
+      console.log("show");
+      placeDescribtion.classList.toggle("d-none");
+    }
 
     placeList.appendChild(clnPlaceTempate);
   });
