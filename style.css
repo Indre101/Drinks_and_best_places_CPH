@@ -28,7 +28,6 @@ body {
 }
 
 .secondPage {
-
     background-image: linear-gradient(to bottom, #07081399, #000000), url(./img-icons/img/backgroundLandingPage.jpeg);
 }
 
@@ -121,7 +120,8 @@ form {}
     justify-content: space-between;
 }
 
-main h1,h2{
+main h1,
+h2 {
     color: white;
     text-align: center;
 
@@ -177,7 +177,7 @@ main h2 {
 }
 
 
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
     background-color: #ccc;
 }
 
@@ -191,7 +191,7 @@ main h2 {
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
     display: block;
 }
 
@@ -296,6 +296,6 @@ main h2 {
 }
 
 .drinksListContainer {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
