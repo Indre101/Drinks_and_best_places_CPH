@@ -282,10 +282,21 @@ function appendDrinkCards(drinkObject, drinkCardContainer) {
 
   drinkObject.places.forEach(placeObj => {
     let clnPlaceTempate = placeInfo.cloneNode(true);
+
     clnPlaceTempate.querySelector(".placeName").textContent =
       placeObj.placeName;
     clnPlaceTempate.querySelector(".drinkPrice").textContent =
       placeObj.drinkPrice;
+    console.log();
+    clnPlaceTempate.querySelector(".stars").textContent = `☆ ${placeObj.stars}`;
+    clnPlaceTempate.querySelector(".stars").style.color = "yellow";
+
+    // for (let index = 0; index < placeObj.stars; index++) {
+    //   const span = document.createElement("span");
+    //   span.textContent = "";
+    //   .appendChild(span);
+    // }
+
     placeList.appendChild(clnPlaceTempate);
   });
 
