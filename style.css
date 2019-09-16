@@ -25,17 +25,17 @@
 }
 
 .categoryName {
-  width: 100%;
-  background-color: blanchedalmond;
+    width: 100%;
+    background-color: blanchedalmond;
 }
+
 .categoryBtn {
     width: 200px;
     height: 2rem;
     margin: 0.5em;
     border-radius: 20px;
     border-style: none;
-    background-color
-    color: white;
+    background-color color: white;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 20px;
@@ -48,13 +48,15 @@
     justify-content: space-between;
 }
 
-main h1,h2{
+main h1,
+h2 {
     color: white;
     text-align: center;
 
 }
+
 main h1 {
-  font-size: 40px;
+    font-size: 40px;
 }
 
 main h2 {
@@ -65,7 +67,7 @@ main h2 {
 
 /* checkbox */
 .checkbox {
-    border: 1px solid black;
+    border: none;
     width: 200px;
     margin-top: 10px;
     background-color: aliceblue;
@@ -73,67 +75,111 @@ main h2 {
 
 .container {
     display: flex;
-flex-direction: row;
-position: relative;
-padding-left: 30px;
+    flex-direction: row;
+    position: relative;
+    padding-left: 30px;
     margin-top: 10px;
-margin-bottom: 12px;
-cursor: pointer;
-font-size: 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
 }
 
 /* Hide the browser's default checkbox */
- .container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 /* Create a custom checkbox */
- .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-margin-left: 5px;
-  background-color: #eee;
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    background-color: #eee;
 }
 
 
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
+    background-color: #ccc;
 }
 
 
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+    content: "";
+    position: absolute;
+    display: none;
 }
 
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
-  display: block;
+    display: block;
 }
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
+
+/*price range*/
 
 #priceRange {
     padding-left: 5px;
+}
+
+#priceInput,
+#priceOutput {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+/* search bar*/
+.search-box {
+    width: 250px;
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+}
+
+.search-txt {
+    width: 100%;
+    border: 2px solid aliceblue;
+    border-right: none;
+    padding: 5px;
+    height: 35px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: aliceblue;
+}
+
+.search-btn {
+    width: 40px;
+    height: 35px;
+    border: 1px solid aliceblue;
+    background-color: aliceblue;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.search-btn img {
+    width: 25px;
+    height: 25px;
+    margin: 2px;
 }
