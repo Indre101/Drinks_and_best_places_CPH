@@ -28,6 +28,8 @@ let placeInfo = document.querySelector(".placeInfo").content;
 const alcoholInput = document.getElementById("alcoholInput");
 const nonAlco = document.getElementById("non-alcoholInput");
 const priceInput = document.querySelector("#priceInput");
+const searchTxt = document.getElementById("search-txt");
+const searchBtn = document.getElementById("search-btn");
 
 let drinkObjectArray = [];
 let categoryNamesArr = [];
@@ -105,6 +107,23 @@ function addDrinks(drinks) {
   navigationButtons.forEach(btn => {
     btn.href = `#${btn.textContent.split(" ").join("")}`;
   });
+
+  // SEARCH TAB
+  const drinkNames = document.querySelectorAll(".oneDrink");
+  searchBtn.addEventListener("click", filterByName);
+  function filterByName() {
+    for (let index = 0; index < drinkNames.length; index++) {
+      if (
+        drinkNames[index].innerHTML
+          .toLowerCase()
+          .includes(searchTxt.value.toLowerCase())
+      ) {
+        drinkNames[index].style.display = "block";
+      } else {
+        drinkNames[index].style.display = "none";
+      }
+    }
+  }
 }
 
 // FILTERING THE CATEGORIES NAMES
@@ -322,6 +341,9 @@ function appendDrinkCards(drinkObject, drinkCardContainer) {
       ".drinkPrice"
     ).textContent = `${placeObj.drinkPrice},-`;
 
+    clnPlaceTempate.querySelector(".placeAdress").textContent =
+      placeObj.address;
+
     clnPlaceTempate.querySelector(".stars").textContent = `☆ ${placeObj.stars}`;
     clnPlaceTempate.querySelector(".stars").style.color = "yellow";
     clnPlaceTempate.querySelector(".describtion").textContent =
@@ -346,3 +368,47 @@ function appendDrinkCards(drinkObject, drinkCardContainer) {
 }
 
 main();
+
+//
+
+// searchTxt.onclick = function() {
+//   if (searchInput.value === "") {
+//     messageError.classList.add("filterResult");
+//     messageError.innerHTML = "Please insert a name";
+//     messageError.style.display = "block";
+//     keaListContainer.insertAdjacentElement("afterbegin", messageError);
+//   } else if (messageError.style.display === "") {
+//     messageError.style.display = "none";
+//   } else if (searchInput.value != "") {
+//     searchTheName();
+//   }
+
+//   event.preventDefault();
+// };
+
+// function searchTheName() {
+//   let i = 0;
+
+//   nameOfKea.forEach(n => {
+//     document.getElementById(n.id).parentElement.classList.remove("resultName");
+
+//     if (n.innerHTML.toLowerCase().includes(searchInput.value.toLowerCase())) {
+//       // resultName.push(n.innerHTML)
+//       i++;
+//       messageError.style.display = "none";
+
+//       let x_1 = document.getElementById(n.id).parentElement;
+
+//       appednResult(x_1);
+//     }
+//   });
+
+//   if (i === 0) {
+//     i = 0;
+//     messageError.classList.add("filterResult");
+//     messageError.innerHTML = "There are no results ";
+//     messageError.style.display = "block";
+
+//     keaListContainer.insertAdjacentElement("afterbegin", messageError);
+//   }
+// }
