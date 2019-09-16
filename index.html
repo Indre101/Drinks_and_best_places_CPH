@@ -8,14 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 
-    <style>
-        .container {
-            display: flex;
-            flex-direction: row;
-            border: 1px solid;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -36,45 +28,67 @@
     </main>
 
 
-    <!-- <article class="drinkCategoriesAndDrinks">
-<section class="checkbox">
-       <label class="container">Non-Alcoholic
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+    <article class="drinkCategoriesAndDrinks">
+        <section class="checkbox">
+            <label class="container">Non-Alcoholic
+                <input type="checkbox"  id="non-alcoholicInput">
+                <span class="checkmark"></span>
+            </label>
 
-<label class="container">Things
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-<label class="container">Three
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-
-<label class="container">Four
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-      </section>
-    -->
+            <label class="container">Alcoholic
+                <input type="checkbox" id="alcoholicInput">
+                <span class="checkmark"></span>
+            </label>
+            <br>
 
 
+            <label class="container">Coffee
+                <input type="checkbox" id="coffeeInput">
+                <span class="checkmark"></span>
+            </label>
 
 
-    <template class="categoryNameTemplate">
-        <h2 class="categoryName">Coffe</h2>
-    </template>
+            <label class="container">Beers
+                <input type="checkbox" id="beersInput">
+                <span class="checkmark"></span>
+            </label>
 
-    <section class="drinksListContainer">
-        <template class="oneDrinkTemplate">
-            <section class="oneDrinkContainer">
-                <img class="drinkImg" src="" alt="">
-                <h3 class="drinkName"></h3>
-            </section>
+            <label class="container">Cocktails
+                <input type="checkbox" id="cocktailsInput">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Soft Drinks
+                <input type="checkbox" id="softdrinksInput">
+                <span class="checkmark"></span>
+            </label>
+            <br>
+<label class="container" id="priceRange">Price Range</label>
+            <input id="priceInput" type="range" name="points" min="10" max="100">
+
+        </section>
+
+
+        <section class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Search by name/P.C.">
+            <a class="search-btn"></a>
+
+        </section>
+
+
+
+        <template class="categoryNameTemplate">
+            <h2 class="categoryName">Coffe</h2>
         </template>
-        <!--
+
+        <section class="drinksListContainer">
+            <template class="oneDrinkTemplate">
+                <section class="oneDrinkContainer">
+                    <img class="drinkImg" src="" alt="">
+                    <h3 class="drinkName"></h3>
+                </section>
+            </template>
+            <!--
           <template class="placeInfo">
             <div class="drinkname"></div>
             <div class="placeName"></div>
@@ -82,7 +96,7 @@
             <div class="stars"></div>
             <div class="drinkPrice"></div>
           </template>  -->
-    </section>
+        </section>
 
     </article>
 
@@ -117,6 +131,4 @@
 
 
     <script src="script.js"></script>
-</body>
-
-</html>
+</body></html>
