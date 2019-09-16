@@ -50,6 +50,7 @@ body {
     align-self: center;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 
 h1,
@@ -155,7 +156,9 @@ main h2 {
     font-size: 25px;
 }
 
-
+.cursor-pointer {
+    cursor: pointer;
+}
 
 /* checkbox */
 .checkbox {
@@ -312,6 +315,7 @@ main h2 {
     font-family: var(--headline);
     text-transform: uppercase;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .categoryName {
@@ -322,6 +326,7 @@ main h2 {
 .oneDrinkContainer {
     margin: 1%;
     margin-bottom: 130px;
+    cursor: pointer;
 }
 
 .drinkName {
