@@ -2,26 +2,90 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
+
 </head>
 
 <body>
-  <main class="landingPage">
-    <article class="logo"></article>
 
 
-    <article class="categoryContainer">
-      <template id="categoryBtnTemplate">
-        <button class="categoryBtn">Coffee</button>
-      </template>
+    <main class="landingPage">
+        <article class="logo"></article>
 
-      <button class="categoryBtn">All</button>
-    </article>
-  </main>
+        <h1>Drinks in Copenhagen and the best places to have them</h1>
+        <h2>I feel like...</h2>
+
+        <article class="categoryContainer">
+            <template id="categoryBtnTemplate">
+                <button class="categoryBtn">Coffee</button>
+            </template>
+
+            <button class="categoryBtn">All</button>
+        </article>
+
+    </main>
+
+
+    <article class="drinkCategoriesAndDrinks">
+        <section class="checkbox">
+            <label class="container">Non-Alcoholic
+                <input type="checkbox"  id="non-alcoholicInput">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Alcoholic
+                <input type="checkbox" id="alcoholicInput">
+                <span class="checkmark"></span>
+            </label>
+            <br>
+
+
+            <label class="container">Coffee
+                <input type="checkbox" id="coffeeInput">
+                <span class="checkmark"></span>
+            </label>
+
+
+            <label class="container">Beers
+                <input type="checkbox" id="beersInput">
+                <span class="checkmark"></span>
+            </label>
+
+
+            <label class="container">Cocktails
+                <input type="checkbox" id="cocktailsInput">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Soft Drinks
+                <input type="checkbox" id="softdrinksInput">
+                <span class="checkmark"></span>
+            </label>
+            <br>
+
+<label class="container" id="priceRange">Price Range</label>
+         <!--   <input id="priceInput" type="range" name="points" min="10" max="100"> -->
+            <input id="priceInput" type="range" name="points" min="10" max="100" onchange="updateTextInput(this.value);">
+            <input id="priceOutput" type="text" value="">
+
+        </section>
+
+
+
+
+      <section class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Search by name/P.C.">
+        <button type="submit" class="search-btn">
+        <i class="fa fa-search"></i>
+            <img src="img-icons/img/index.png" alt="searchicon">
+            </button>
+        </section>
+
 
 
   <article class="secondPage">
@@ -76,13 +140,31 @@
 
   </article>
 
+        <template class="categoryNameTemplate">
+            <h2 class="categoryName">Coffe</h2>
+        </template>
+
+        <section class="drinksListContainer">
+            <template class="oneDrinkTemplate">
+                <section class="oneDrinkContainer">
+                    <img class="drinkImg" src="" alt="">
+                    <h3 class="drinkName"></h3>
+                </section>
+            </template>
+            <!--
+          <template class="placeInfo">
+            <div class="drinkname"></div>
+            <div class="placeName"></div>
+            <div class="placeAdress"></div>
+            <div class="stars"></div>
+            <div class="drinkPrice"></div>
+          </template>  -->
+        </section>
+
+    </article>
 
 
-
-
-
-
-  <!-- 
+    <!--
   <template>
     <div class="container">
       <h4></h4>
@@ -104,7 +186,10 @@
   <div class="category"></div> -->
 
 
-  <script src="script.js"></script>
-</body>
-
-</html>
+    <script src="script.js"></script>
+    <script>
+    function updateTextInput(val) {
+          document.getElementById('priceOutput').value=val;
+        }
+    </script>
+</body></html>
