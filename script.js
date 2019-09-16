@@ -124,6 +124,15 @@ function addDrinks(drinks) {
       }
     }
   }
+
+  function doc_keyUp(e) {
+    // this would test for whichever key is 40 and the ctrl key at the same time
+    if (e.keyCode == 13) {
+      filterByName();
+    }
+  }
+  // register the handler
+  document.addEventListener("keydown", doc_keyUp, false);
 }
 
 // FILTERING THE CATEGORIES NAMES
