@@ -12,7 +12,6 @@ body {
     margin: 0;
     color: white;
     font-family: var(--headline);
-
 }
 
 :root {
@@ -29,8 +28,13 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: center;
     align-items: center;
+}
+
+.landingPage h2 {
+    margin-bottom: 10rem;
 }
 
 .secondPage {

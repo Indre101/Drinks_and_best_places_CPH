@@ -17,77 +17,78 @@
   <main class="landingPage">
     <article class="logo"></article>
 
-    <h1>Drinks in Copenhagen and the best places to have them</h1>
+    <h1>Drinks in Copenhagen and the <br> best places to have them</h1>
     <h2>I feel like...</h2>
 
     <article class="categoryContainer">
       <template id="categoryBtnTemplate">
-        <button class="categoryBtn">Coffee</button>
+        <a class="categoryLink" href=""><button class="categoryBtn">Coffee</button></a>
       </template>
-
-      <button class="categoryBtn">All</button>
+      <a href="#drinkCategoriesAndDrinks"><button class="categoryBtn">All</button></a>
     </article>
 
   </main>
 
 
+  <!--SECOND PAGE  -->
+
 
   <article class="secondPage">
 
- <section class="dropdown">
-     <img src="img-icons/img/filter.png" onclick="dropDown()" class="filterbtn" alt="filterbtn">
-    <section class="checkbox" id="checkbox">
-      <label class="container">Non-Alcoholic
-        <input id="non-alcoholInput" type="checkbox" id="non-alcoholicInput">
-        <span class="checkmark"></span>
-      </label>
+    <section class="dropdown">
+      <img src="img-icons/img/filter.png" onclick="dropDown()" class="filterbtn" alt="filterbtn">
+      <section class="checkbox" id="checkbox">
+        <label class="container">Non-Alcoholic
+          <input id="non-alcoholInput" type="checkbox" id="non-alcoholicInput">
+          <span class="checkmark"></span>
+        </label>
 
-      <label class="container">Alcoholic
-        <input id="alcoholInput" type="checkbox" id="alcoholicInput">
-        <span class="checkmark"></span>
-      </label>
-      <br>
+        <label class="container">Alcoholic
+          <input id="alcoholInput" type="checkbox" id="alcoholicInput">
+          <span class="checkmark"></span>
+        </label>
+        <br>
 
-      <label class="container">Coffee
-        <input id="justCoffee" value="coffee" class="drinkCategryInput" type="checkbox" id="coffeeInput">
-        <span class="checkmark"></span>
-      </label>
-
-
-      <label class="container">Beers
-        <input id="justBeer" class="drinkCategryInput" value="beers" type="checkbox" id="beersInput">
-        <span class="checkmark"></span>
-      </label>
+        <label class="container">Coffee
+          <input id="justCoffee" value="coffee" class="drinkCategryInput" type="checkbox" id="coffeeInput">
+          <span class="checkmark"></span>
+        </label>
 
 
-      <label class="container">Cocktails
-        <input id="justCocktail" class="drinkCategryInput" value="cocktails" type="checkbox" id="cocktailsInput">
-        <span class="checkmark"></span>
-      </label>
-
-      <label class="container">Soft Drinks
-        <input id="justSoftDrinks" class="drinkCategryInput" value="soft drinks" type="checkbox" id="softdrinksInput">
-        <span class="checkmark"></span>
-      </label>
-      <br>
-
-      <label class="container" id="priceRange">Price Range</label>
-      <!--   <input id="priceInput" type="range" name="points" min="10" max="100"> -->
-      <input id="priceInput" class="drinkCategryInput" type="range" name="points" min="10" max="100"
-        onchange="updateTextInput(this.value);">
-      <input id="priceOutput" type="text" value="">
-    </section>
+        <label class="container">Beers
+          <input id="justBeer" class="drinkCategryInput" value="beers" type="checkbox" id="beersInput">
+          <span class="checkmark"></span>
+        </label>
 
 
-    <section class="search-box">
-      <input class="search-txt" type="text" name="" placeholder="Search by name/P.C.">
-      <button type="submit" class="search-btn">
-        <i class="fa fa-search"></i>
-        <img src="img-icons/img/index.png" alt="searchicon">
-      </button>
-    </section>
+        <label class="container">Cocktails
+          <input id="justCocktail" class="drinkCategryInput" value="cocktails" type="checkbox" id="cocktailsInput">
+          <span class="checkmark"></span>
+        </label>
 
+        <label class="container">Soft Drinks
+          <input id="justSoftDrinks" class="drinkCategryInput" value="soft drinks" type="checkbox" id="softdrinksInput">
+          <span class="checkmark"></span>
+        </label>
+        <br>
+
+        <label class="container" id="priceRange">Price Range</label>
+        <!--   <input id="priceInput" type="range" name="points" min="10" max="100"> -->
+        <input id="priceInput" class="drinkCategryInput" type="range" name="points" min="10" max="100"
+          onchange="updateTextInput(this.value);">
+        <input id="priceOutput" type="text" value="">
       </section>
+
+
+      <section class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Search by name/P.C.">
+        <button type="submit" class="search-btn">
+          <i class="fa fa-search"></i>
+          <img src="img-icons/img/index.png" alt="searchicon">
+        </button>
+      </section>
+
+    </section>
 
 
 
@@ -96,8 +97,8 @@
     <!-- DRINKS AND CATEGORIES -->
 
 
-    <article class="drinkCategoriesAndDrinks">
-      
+    <article id="drinkCategoriesAndDrinks" class="drinkCategoriesAndDrinks">
+
       <template class="categoryNameTemplate">
         <h2 class="categoryName">Coffe</h2>
         <section class="drinksListContainer">
@@ -135,7 +136,7 @@
 
 
 
-    <template class="categoryNameTemplate">
+    <!-- <template class="categoryNameTemplate">
       <h2 class="categoryName">Coffe</h2>
     </template>
 
@@ -146,7 +147,7 @@
           <h3 class="drinkName"></h3>
         </section>
       </template>
-    </section>
+    </section> -->
 
   </article>
 
@@ -155,13 +156,13 @@
   <script>
     function updateTextInput(val) {
 
-          document.getElementById('priceOutput').value=val;
-        }
+      document.getElementById('priceOutput').value = val;
+    }
 
-        function dropDown() {
-            document.getElementById("checkbox").classList.toggle("show");
-        }
+    function dropDown() {
+      document.getElementById("checkbox").classList.toggle("show");
+    }
+  </script>
+</body>
 
-
-    </script>
-</body></html>
+</html>
