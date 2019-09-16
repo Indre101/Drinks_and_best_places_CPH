@@ -14,82 +14,77 @@
 <body>
 
 
-    <main class="landingPage">
-        <article class="logo"></article>
+  <main class="landingPage">
+    <article class="logo"></article>
 
-        <h1>Drinks in Copenhagen and the best places to have them</h1>
-        <h2>I feel like...</h2>
+    <h1>Drinks in Copenhagen and the best places to have them</h1>
+    <h2>I feel like...</h2>
 
-        <article class="categoryContainer">
-            <template id="categoryBtnTemplate">
-                <button class="categoryBtn">Coffee</button>
-            </template>
+    <article class="categoryContainer">
+      <template id="categoryBtnTemplate">
+        <button class="categoryBtn">Coffee</button>
+      </template>
 
-            <button class="categoryBtn">All</button>
-        </article>
+      <button class="categoryBtn">All</button>
+    </article>
 
-    </main>
-
-<section class="dropdown">
-     <img src="img-icons/img/filter.png" onclick="dropDown()" class="filterbtn" alt="filterbtn">
-
-        <section class="checkbox" id="checkbox">
-            <label class="container">Non-Alcoholic
-                <input type="checkbox"  id="non-alcoholicInput">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">Alcoholic
-                <input type="checkbox" id="alcoholicInput">
-                <span class="checkmark"></span>
-            </label>
-            <br>
-
-
-            <label class="container">Coffee
-                <input type="checkbox" id="coffeeInput">
-                <span class="checkmark"></span>
-            </label>
-
-
-            <label class="container">Beers
-                <input type="checkbox" id="beersInput">
-                <span class="checkmark"></span>
-            </label>
-
-
-            <label class="container">Cocktails
-                <input type="checkbox" id="cocktailsInput">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">Soft Drinks
-                <input type="checkbox" id="softdrinksInput">
-                <span class="checkmark"></span>
-            </label>
-            <br>
-
-<label class="container" id="priceRange">Price Range</label>
-         <!--   <input id="priceInput" type="range" name="points" min="10" max="100"> -->
-            <input id="priceInput" type="range" name="points" min="10" max="100" onchange="updateTextInput(this.value);">
-            <input id="priceOutput" type="text" value="">
-
-        </section>
-
-</section>
-
-
-      <section class="search-box">
-        <input class="search-txt" type="text" name="" placeholder="Search by name/P.C.">
-        <button type="submit" class="search-btn">
-        <i class="fa fa-search"></i>
-            <img src="img-icons/img/index.png" alt="searchicon">
-            </button>
-        </section>
+  </main>
 
 
 
   <article class="secondPage">
+
+ class="dropdown">
+     <img src="img-icons/img/filter.png" onclick="dropDown()" class="filterbtn" alt="filterbtn">
+    <section class="checkbox" id="checkbox">
+      <label class="container">Non-Alcoholic
+        <input type="checkbox" id="non-alcoholicInput">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Alcoholic
+        <input type="checkbox" id="alcoholicInput">
+        <span class="checkmark"></span>
+      </label>
+      <br>
+
+      <label class="container">Coffee
+        <input type="checkbox" id="coffeeInput">
+        <span class="checkmark"></span>
+      </label>
+
+
+      <label class="container">Beers
+        <input type="checkbox" id="beersInput">
+        <span class="checkmark"></span>
+      </label>
+
+
+      <label class="container">Cocktails
+        <input type="checkbox" id="cocktailsInput">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="container">Soft Drinks
+        <input type="checkbox" id="softdrinksInput">
+        <span class="checkmark"></span>
+      </label>
+      <br>
+
+      <label class="container" id="priceRange">Price Range</label>
+      <!--   <input id="priceInput" type="range" name="points" min="10" max="100"> -->
+      <input id="priceInput" type="range" name="points" min="10" max="100" onchange="updateTextInput(this.value);">
+      <input id="priceOutput" type="text" value="">
+    </section>
+
+
+    <section class="search-box">
+      <input class="search-txt" type="text" name="" placeholder="Search by name/P.C.">
+      <button type="submit" class="search-btn">
+        <i class="fa fa-search"></i>
+        <img src="img-icons/img/index.png" alt="searchicon">
+      </button>
+    </section>
 
 
     <form id="form" action="/action_page.php">
@@ -130,29 +125,31 @@
       </template>
 
       <template class="placeInfo">
-        <div class="drinkname"></div>
-        <div class="placeName"></div>
-        <div class="placeAdress"></div>
-        <div class="stars"></div>
-        <div class="drinkPrice"></div>
+        <article class="placeInfoContainer">
+          <div class="drinkname"></div>
+          <div class="placeName"></div>
+          <div class="placeAdress"></div>
+          <div class="stars"></div>
+          <div class="drinkPrice"></div>
+        </article>
       </template>
     </article>
 
 
-  </article>
 
-        <template class="categoryNameTemplate">
-            <h2 class="categoryName">Coffe</h2>
-        </template>
 
-        <section class="drinksListContainer">
-            <template class="oneDrinkTemplate">
-                <section class="oneDrinkContainer">
-                    <img class="drinkImg" src="" alt="">
-                    <h3 class="drinkName"></h3>
-                </section>
-            </template>
-            <!--
+    <template class="categoryNameTemplate">
+      <h2 class="categoryName">Coffe</h2>
+    </template>
+
+    <section class="drinksListContainer">
+      <template class="oneDrinkTemplate">
+        <section class="oneDrinkContainer">
+          <img class="drinkImg" src="" alt="">
+          <h3 class="drinkName"></h3>
+        </section>
+      </template>
+      <!--
           <template class="placeInfo">
             <div class="drinkname"></div>
             <div class="placeName"></div>
@@ -160,12 +157,12 @@
             <div class="stars"></div>
             <div class="drinkPrice"></div>
           </template>  -->
-        </section>
+    </section>
 
-    </article>
+  </article>
 
 
-    <!--
+  <!--
   <template>
     <div class="container">
       <h4></h4>
@@ -187,9 +184,10 @@
   <div class="category"></div> -->
 
 
-    <script src="script.js"></script>
-    <script>
+  <script src="script.js"></script>
+  <script>
     function updateTextInput(val) {
+
           document.getElementById('priceOutput').value=val;
         }
 
