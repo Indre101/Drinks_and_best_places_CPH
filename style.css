@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
+
+
 * {
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
 
 body {
     margin: 0;
     color: white;
-    font-family: var(--headline)
+    font-family: var(--headline);
 }
 
 :root {
@@ -51,7 +55,6 @@ body {
 h1,
 h3 {
     color: var(--drink-name-color);
-    font-family: var(--headline);
     text-transform: uppercase;
 }
 
@@ -59,7 +62,7 @@ h3 {
 
 
 .placeList {
-    font-family: var(--breadText);
+    font-family: var(---breadText);
     color: var(--drink-name-color);
     margin-top: 139px;
     padding: 1%;
