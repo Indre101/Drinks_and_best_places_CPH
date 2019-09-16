@@ -105,11 +105,6 @@ function addDrinks(drinks) {
   navigationButtons.forEach(btn => {
     btn.href = `#${btn.textContent.split(" ").join("")}`;
   });
-
-  function taketothePart() {}
-
-  console.log(test);
-  console.log(testbtn);
 }
 
 // FILTERING THE CATEGORIES NAMES
