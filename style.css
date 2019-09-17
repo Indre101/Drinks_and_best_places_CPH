@@ -117,7 +117,7 @@ form {}
 
 .logo img {
     border-radius: 50%;
-    width: 13rem;
+    width: 10rem;
 }
 
 
@@ -360,6 +360,7 @@ main h2 {
     align-items: flex-start;
 }
 
+
 /* sliding background */
 
 slider {
@@ -430,3 +431,4 @@ slide p {
  30.0001% { left: -100%; width: 0%; }
  100% { left: 100%; width: 0%; }
 }
+
