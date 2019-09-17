@@ -432,3 +432,12 @@ slide p {
  100% { left: 100%; width: 0%; }
 }
 
+.logo {
+    animation: rotate 2s ease-in-out 1;
+}
+
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
