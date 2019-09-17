@@ -322,6 +322,11 @@ main h2 {
 .categoryName {
     width: 100%;
     margin-left: 15px;
+    font-size: 50px;
+    margin-top: 5rem;
+    background-color: #707070;
+    word-spacing: 20px;
+    color: #EFE7E7;
 }
 
 
