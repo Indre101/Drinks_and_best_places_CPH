@@ -203,8 +203,7 @@ drinkCategryInput.forEach(drinkCategory => {
 });
 
 function testIngf(inputArrays) {
-  let elements = Array.from(drinkCategryInput);
-
+  let elements = Array.from(inputArrays);
   if (elements.every(item => item.checked != true)) {
     return true;
   } else {
@@ -223,9 +222,12 @@ function checkIfchecked(checkbox) {
 }
 
 // FILTER IF WITH ALCOHOL
+
 function getTheAlcoholDrinks() {
   parentDrinkCategoriesAndDrinks.innerHTML = "";
   if (testIngf(inputsFilters)) {
+    console.log(testIngf(inputsFilters));
+
     addDrinks(drinkObjectArray);
   } else if (testIngf(drinkCategryInput) && !checkIfchecked(this)) {
     let sorted = filteredDrinksNoRepat().filter(drink => drink.alcohol == 1);
@@ -264,9 +266,11 @@ function getTheAlcoholDrinks() {
   // }
 }
 
+console.log();
+
 function getNonAlcoDrinks() {
   parentDrinkCategoriesAndDrinks.innerHTML = "";
-
+  console.log(testIngf(inputsFilters));
   if (testIngf(inputsFilters)) {
     addDrinks(drinkObjectArray);
   } else if (testIngf(drinkCategryInput) && !checkIfchecked(this)) {
@@ -323,21 +327,27 @@ function getNonAlcoDrinks() {
 function getJustCategoryDrinks() {
   // let clickCount = 0;
   parentDrinkCategoriesAndDrinks.innerHTML = "";
-  console.log(testIngf(isAlcoInputs));
 
-  if (testIngf(isAlcoInputs) && !checkIfchecked(this)) {
-    let sorted = filteredDrinksNoRepat().filter(
-      drink => drink.category.toLowerCase() == this.value.toLowerCase()
-    );
+  console.log(this.checked);
+
+  if (testIngf(inputsFilters)) {
+    addDrinks(drinkObjectArray);
+  } else if (!this.checked && testIngf(isAlcoInputs)) {
+    let sorted = filteredDrinksNoRepat().filter(drink => {
+      console.log(drink.category.toLowerCase(), this.value.toLowerCase());
+      return drink.category.toLowerCase() == this.value.toLowerCase();
+    });
 
     myArray = filteredDrinksNoRepat().filter(function(el) {
       return !sorted.includes(el);
     });
 
+    console.log("filteredDrinksNoRepat", filteredDrinksNoRepat());
+    console.log("myArray", myArray);
+    console.log("sorted", sorted);
     addDrinks(myArray);
-  } else if (testIngf(isAlcoInputs) && checkIfchecked(this)) {
-    console.log(testIngf(isAlcoInputs));
-
+  } else if (this.checked && testIngf(isAlcoInputs)) {
+    console.log("trueeee");
     let sorted = drinkObjectArray.filter(
       drink => drink.category.toLowerCase() == this.value.toLowerCase()
     );
@@ -348,6 +358,8 @@ function getJustCategoryDrinks() {
 
     addDrinks(filteredDrinksNoRepat());
   }
+
+  // else
 
   // else if (checkIfchecked(this) && filteredDrinksNoRepat().length > 0) {
   //   let sorted = drinkObjectArray.filter(
