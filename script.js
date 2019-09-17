@@ -230,11 +230,23 @@ function getJustCategoryDrinks() {
     drink => drink.category.toLowerCase() == this.value.toLowerCase()
   );
 
-  sorted.forEach(drink => {
-    filteredDrinks.push(drink);
-  });
+  if (checkIfchecked(this)) {
+    sorted.forEach(drink => {
+      filteredDrinks.push(drink);
+    });
+    addDrinks(filteredDrinks);
+  }
 
-  addDrinks(filteredDrinksNoRepat());
+  if (!checkIfchecked(this)) {
+    console.log("false");
+    myArray = filteredDrinks.filter(function(el) {
+      return !sorted.includes(el);
+    });
+
+    addDrinks(myArray);
+
+    console.log(myArray);
+  }
 }
 
 function getTheAlcoholDrinks() {

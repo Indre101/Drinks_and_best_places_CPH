@@ -15,11 +15,13 @@
 
 
   <main class="landingPage">
+
+    <h1>The expacts guide to drinks</h1>
+
     <article class="logo">
       <img src="./img-icons/icons/logo.jpg" alt="">
     </article>
 
-    <h1>Drinks in Copenhagen and the <br> best places to have them</h1>
     <h2>I feel like...</h2>
 
     <article class="categoryContainer">
@@ -77,7 +79,7 @@
         <label class="container" id="priceRange">Price Range</label>
         <!--   <input id="priceInput" type="range" name="points" min="10" max="100"> -->
         <input id="priceInput" class="drinkCategryInput" type="range" name="points" min="10" max="100"
-          onchange="updateTextInput(this.value);">
+          oninput="updateTextInput(this.value);">
         <input id="priceOutput" type="text" value="">
       </section>
 
