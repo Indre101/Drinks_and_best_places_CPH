@@ -353,6 +353,7 @@ function getNonAlcoDrinks() {
     addDrinks(filteredDrinksNoRepat());
   } else if (!testIngf(isAlcoInputs) && !testIngf(drinkCategryInput)) {
     let uncheckedAlcoInputs = [];
+    // filteredDrinks = [];
     const getUncheckedAlcoInputs = () => {
       for (let index = 0; index < isAlcoInputs.length; index++) {
         if (!isAlcoInputs[index].checked) {
@@ -364,7 +365,7 @@ function getNonAlcoDrinks() {
     getUncheckedAlcoInputs();
     const drinksToRemove = [];
 
-    let sorted = filteredDrinksNoRepat().filter(drink => {
+    let sorted = drinkObjectArray.filter(drink => {
       drinkCategryInput.forEach(inp => {
         if (
           inp.checked &&
@@ -372,8 +373,9 @@ function getNonAlcoDrinks() {
           drink.category.toLowerCase() == inp.value.toLowerCase()
         ) {
           // let valuesToRemove = filteredDrinksNoRepat();
+          console.log(drink);
           filteredDrinks.push(drink);
-          filterResults.push(drink);
+          // filterResults.push(drink);
         }
       });
     });
@@ -389,11 +391,13 @@ function getNonAlcoDrinks() {
     filterResults = filteredDrinksNoRepat().filter(function(el) {
       return !drinksToRemove.includes(el);
     });
+    console.log(filteredDrinks);
+    console.log(filterResults);
 
     addDrinks(filterResults);
   }
 
-  console.log(filteredDrinksNoRepat());
+  // console.log(filteredDrinksNoRepat());
 }
 
 // console.log(testIngf(isAlcoInputs));
@@ -414,12 +418,12 @@ function getJustCategoryDrinks() {
     let sorted = drinkObjectArray.filter(drink => {
       isAlcoInputs.forEach(inp => {
         if (inp.checked && drink.alcohol == inp.value) {
-          filterResults.push(drink);
+          filteredDrinks.push(drink);
         }
       });
     });
 
-    addDrinks(filterResults);
+    addDrinks(filteredDrinksNoRepat());
   } else if (!testIngf(isAlcoInputs) && !testIngf(drinkCategryInput)) {
     // pushDrinkObjects(0);
 
@@ -452,7 +456,8 @@ function getJustCategoryDrinks() {
         ) {
           console.log(inp);
 
-          filteredDrinks.push(drink);
+          // filteredDrinks.push(drink);
+          filterResults.push(drink);
           // valuesToDelete.push(drink);
         }
       });
