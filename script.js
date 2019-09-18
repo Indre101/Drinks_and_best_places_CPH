@@ -197,8 +197,10 @@ let alcoAndNonAlcofilteredDrinksNoRepeat = () =>
     return alcoAndNonAlcofilteredDrinks.indexOf(item) >= index;
   });
 
+let filterResults = [];
+
 let filteredDrinks = [];
-filteredDrinks = filteredDrinks.concat(alcoAndNonAlcofilteredDrinksNoRepeat());
+// filteredDrinks = filteredDrinks.concat(alcoAndNonAlcofilteredDrinksNoRepeat());
 let filteredDrinksNoRepat = () =>
   filteredDrinks.filter(function(item, index) {
     return filteredDrinks.indexOf(item) >= index;
@@ -206,9 +208,6 @@ let filteredDrinksNoRepat = () =>
 
 // FILTER ACCORDING TO THE CATEGORY
 const drinkCategryInput = document.querySelectorAll(".drinkCategryInput");
-drinkCategryInput.forEach(drinkCategory => {
-  drinkCategory.addEventListener("click", getJustCategoryDrinks);
-});
 
 function testIngf(inputArrays) {
   let elements = Array.from(inputArrays);
@@ -230,12 +229,27 @@ function checkIfchecked(checkbox) {
 }
 
 // FILTER IF WITH ALCOHOL
+alcoholInput.addEventListener("click", getTheAlcoholDrinks);
+nonAlco.addEventListener("click", getNonAlcoDrinks);
 
 function getTheAlcoholDrinks() {
   parentDrinkCategoriesAndDrinks.innerHTML = "";
-  if (testIngf(inputsFilters)) {
-    console.log(testIngf(inputsFilters));
 
+  if (testIngf(isAlcoInputs) && !testIngf(drinkCategryInput)) {
+    let sorted = filteredDrinksNoRepat().filter(drink => {
+      drinkCategryInput.forEach(inputCat => {
+        if (inputCat.checked) {
+          drink.category.toLowerCase() == inputCat.value.toLowerCase();
+        }
+      });
+    });
+
+    sorted.forEach(drink => {
+      filteredDrinks.push(drink);
+    });
+
+    addDrinks(filteredDrinksNoRepat());
+  } else if (testIngf(inputsFilters)) {
     addDrinks(drinkObjectArray);
   } else if (testIngf(drinkCategryInput) && !this.checked) {
     let sorted = filteredDrinksNoRepat().filter(drink => drink.alcohol == 1);
@@ -252,36 +266,39 @@ function getTheAlcoholDrinks() {
     });
 
     addDrinks(filteredDrinksNoRepat());
-  } else if (!testIngf(drinkCategryInput) && this.checked) {
-    console.log("kjlkæ");
-    let sorted = filteredDrinksNoRepat().filter(drink => drink.alcohol == 1);
+  } else if (!testIngf(isAlcoInputs) && !testIngf(drinkCategryInput)) {
+    console.log("alco not resadk");
 
-    sorted.forEach(drink => {
-      alcoAndNonAlcofilteredDrinks.push(drink);
+    let sorted = filteredDrinksNoRepat().filter(drink => {
+      drinkCategryInput.forEach(inp => {
+        if (
+          inp.checked &&
+          drink.alcohol == this.value &&
+          drink.category.toLowerCase() == inp.value.toLowerCase()
+        ) {
+          filteredDrinks.push(drink);
+          filterResults.push(drink);
+        }
+      });
     });
 
-    addDrinks(alcoAndNonAlcofilteredDrinksNoRepeat());
-  } else if (!testIngf(drinkCategryInput) && !this.checked) {
-    console.log("kjlkæ");
-    let sorted = alcoAndNonAlcofilteredDrinksNoRepeat().filter(
-      drink => drink.alcohol == 1
-    );
-
-    myArray = alcoAndNonAlcofilteredDrinksNoRepeat().filter(function(el) {
-      return !sorted.includes(el);
-    });
-
-    console.log(sorted);
-    addDrinks(myArray);
+    addDrinks(filterResults);
   }
 }
 
+function pushDrinkObjects(param) {
+  console.log("lklæk");
+  let sorted = drinkObjectArray.filter(drink => drink.alcohol == param);
+  sorted.forEach(e => {
+    filteredDrinks.push(e);
+  });
+}
+
+// NONE ALCO
 function getNonAlcoDrinks() {
   parentDrinkCategoriesAndDrinks.innerHTML = "";
 
   if (testIngf(isAlcoInputs) && !testIngf(drinkCategryInput)) {
-    console.log("alco not resadk");
-
     let sorted = filteredDrinksNoRepat().filter(drink => {
       drinkCategryInput.forEach(inputCat => {
         if (inputCat.checked) {
@@ -313,29 +330,28 @@ function getNonAlcoDrinks() {
     });
 
     addDrinks(filteredDrinksNoRepat());
-  } else if (!testIngf(drinkCategryInput) && this.checked) {
-    console.log("kjlkæ");
-    let sorted = filteredDrinksNoRepat().filter(drink => drink.alcohol == 0);
+  } else if (!testIngf(isAlcoInputs) && !testIngf(drinkCategryInput)) {
+    pushDrinkObjects(1);
 
-    // } );
-    // let sorted = filteredDrinksNoRepat().filter(drink =>{
+    console.log("lkjælæ not resadk");
 
-    //   for (let index = 0; index < drinkCategryInput.length; index++) {
-    //     if(drinkCategryInput[index].checked)
-
-    //     return (drink.alcohol == 0 && drink.category.toLowerCase() == drinkCategryInput[index].value.toLowerCase())
-
-    //   }
-
-    // } );
-
-    sorted.forEach(drink => {
-      alcoAndNonAlcofilteredDrinks.push(drink);
+    let sorted = filteredDrinksNoRepat().filter(drink => {
+      drinkCategryInput.forEach(inp => {
+        if (
+          inp.checked &&
+          drink.alcohol == this.value &&
+          drink.category.toLowerCase() == inp.value.toLowerCase()
+        ) {
+          filteredDrinks.push(drink);
+          filterResults.push(drink);
+        }
+      });
     });
 
-    addDrinks(alcoAndNonAlcofilteredDrinksNoRepeat());
+    addDrinks(filterResults);
   } else if (!testIngf(drinkCategryInput) && !this.checked) {
-    console.log("kjlkæ");
+    console.log(alcoAndNonAlcofilteredDrinksNoRepeat());
+
     let sorted = alcoAndNonAlcofilteredDrinksNoRepeat().filter(
       drink => drink.alcohol == 0
     );
@@ -346,69 +362,89 @@ function getNonAlcoDrinks() {
 
     addDrinks(myArray);
   }
+
+  console.log(filteredDrinksNoRepat());
 }
 
 // console.log(testIngf(isAlcoInputs));
+
+drinkCategryInput.forEach(drinkCategory => {
+  drinkCategory.addEventListener("click", getJustCategoryDrinks);
+});
 
 function getJustCategoryDrinks() {
   // let clickCount = 0;
   parentDrinkCategoriesAndDrinks.innerHTML = "";
 
-  console.log(this.checked);
-
   if (testIngf(inputsFilters)) {
     addDrinks(drinkObjectArray);
-  } else if (!this.checked && testIngf(isAlcoInputs)) {
-    console.log("remove");
-    let sorted = filteredDrinksNoRepat().filter(drink => {
-      return drink.category.toLowerCase() == this.value.toLowerCase();
-    });
-
-    myArray = filteredDrinksNoRepat().filter(function(el) {
-      return !sorted.includes(el);
-    });
-
-    addDrinks(myArray);
   } else if (this.checked && testIngf(isAlcoInputs)) {
+    console.log("this checked first");
+
+    console.log(this);
     let sorted = drinkObjectArray.filter(
       drink => drink.category.toLowerCase() == this.value.toLowerCase()
     );
 
     sorted.forEach(drink => {
       filteredDrinks.push(drink);
+      // filterResults.push(drink);
     });
+
     addDrinks(filteredDrinksNoRepat());
-  } else if (!testIngf(isAlcoInputs) && this.checked) {
-    let sorted = filteredDrinksNoRepat().filter(drink => {
-      if (alcoholInput.checked) {
-        return (
-          drink.alcohol == 1 &&
-          drink.category.toLowerCase() == this.value.toLowerCase()
-        );
-      }
-      if (nonAlco.checked) {
-        return (
-          drink.alcohol == 0 &&
-          drink.category.toLowerCase() == this.value.toLowerCase()
-        );
-      }
+  } else if (!this.checked && testIngf(isAlcoInputs)) {
+    let uncheckedCategoryInputs = [];
+    const test = () => {
+      uncheckedCategoryInputs = [];
 
-      // alcoholInput  nonAlco
+      for (let index = 0; index < drinkCategryInput.length; index++) {
+        if (!drinkCategryInput[index].checked) {
+          uncheckedCategoryInputs.push(drinkCategryInput[index]);
+        }
+      }
+    };
+    test();
+    console.log(uncheckedCategoryInputs);
+    let sorted = [];
+
+    filteredDrinksNoRepat().filter(drink => {
+      // sorted = [];
+      uncheckedCategoryInputs.forEach(inpCat => {
+        if (drink.category.toLowerCase() == inpCat.value.toLowerCase()) {
+          sorted.push(drink);
+        }
+      });
     });
 
-    console.log(alcoAndNonAlcofilteredDrinksNoRepeat());
     console.log(sorted);
 
-    sorted.forEach(drink => {
-      filteredDrinks.push(drink);
+    console.log(filteredDrinks);
+
+    filteredDrinks = filteredDrinksNoRepat().filter(function(el) {
+      return !sorted.includes(el);
     });
 
-    addDrinks(sorted);
+    console.log(filteredDrinks);
+    addDrinks(filteredDrinks);
+  } else if (!testIngf(isAlcoInputs) && !testIngf(drinkCategryInput)) {
+    console.log("ljæl");
+    pushDrinkObjects(0);
+
+    let sorted = filteredDrinksNoRepat().filter(drink => {
+      isAlcoInputs.forEach(inp => {
+        if (
+          inp.checked &&
+          drink.alcohol == inp.value &&
+          drink.category.toLowerCase() == this.value.toLowerCase()
+        ) {
+          filteredDrinks.push(drink);
+          filterResults.push(drink);
+        }
+      });
+    });
+    addDrinks(filterResults);
   }
 }
-
-alcoholInput.addEventListener("click", getTheAlcoholDrinks);
-nonAlco.addEventListener("click", getNonAlcoDrinks);
 
 // FILTER BY PRICE
 const filterByPrice = drinks => {
@@ -425,6 +461,7 @@ const filterByPrice = drinks => {
 
 priceInput.addEventListener("click", showFilteredByPrice);
 
+// FILTER BY PRICE
 let filteredDrinksByPrice = [];
 
 function showFilteredByPrice() {
