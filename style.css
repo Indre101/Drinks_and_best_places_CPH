@@ -45,12 +45,16 @@ body {
     background-color: #231e0d;
     /* display: none; */
     position: absolute;
-    width: 20%;
-    height: 20%;
+    width: 250px;
+    /* height: 20%; */
     align-self: center;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1,
@@ -87,7 +91,20 @@ h3 {
 }
 
 
+.linkToWebsite {
+    text-decoration: none;
+    color: white;
+    margin: 1rem;
+    border: 1px solid #b3a9ac;
+    padding: 0.5rem;
+    background-color: #707070;
+}
 
+
+
+.linkToWebsite:hover {
+    background-color: #b3a9ac;
+}
 
 /* Handle */
 .placeList::-webkit-scrollbar-thumb {
@@ -96,10 +113,12 @@ h3 {
 }
 
 
-form {}
+
 
 .drinkImg {
     width: 100%;
+    transition: opacity 0.3s ease-in-out;
+
     /* width: 300px; */
 }
 
@@ -131,6 +150,10 @@ form {}
     cursor: pointer;
 }
 
+.placeInfoContainer:hover {
+    background-color: #8b8b8b;
+    opacity: 1;
+}
 
 
 
@@ -143,7 +166,7 @@ form {}
 
 main h1,
 h2 {
-    color:  var(--drink-name-color);
+    color: var(--drink-name-color);
     text-align: center;
 }
 
@@ -208,7 +231,7 @@ main h2 {
 }
 
 
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
     background-color: #ccc;
 }
 
@@ -222,9 +245,22 @@ main h2 {
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
     display: block;
 }
+
+
+.categoryBtn:hover {
+    background-color: #b3a9ac;
+    /* width: 250px; */
+    /* height: 2.8rem; */
+    cursor: pointer;
+    /* transform: scale(1.2, 1.2); */
+}
+
+
+
+
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
@@ -272,6 +308,18 @@ main h2 {
     display: flex;
     margin: 10px;
     float: right;
+}
+
+.closeButton {
+    width: 100px;
+    height: 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+    /* background-color: # */
+}
+
+.closeButton:hover {
+    background-color: #b3a9ac;
 }
 
 .search-txt {
@@ -344,7 +392,17 @@ main h2 {
     width: 300px;
 }
 
+
+
+.drinkImg:hover {
+    opacity: 0.8;
+}
+
+
+
+
 .drinkName {
+    transition: background-color 0.1s;
     background-color: #707070;
     opacity: 0.8;
     text-align: center;
@@ -353,6 +411,11 @@ main h2 {
     max-height: 80px;
     margin-top: -65%;
 
+}
+
+
+.drinkName:hover {
+    background-color: #b3a9ac;
 }
 
 .drinksListContainer {
@@ -377,7 +440,7 @@ slider {
     z-index: -1;
 }
 
-slider > * {
+slider>* {
     position: absolute;
     display: block;
     width: 100%;
@@ -489,5 +552,20 @@ slide:nth-child(4) {
 @keyframes rotate {
     100% {
         transform: rotate(360deg);
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .categoryContainer {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .categoryContainer a {
+        margin: 0 auto;
+        padding: 1rem;
     }
 }
