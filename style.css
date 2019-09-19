@@ -382,7 +382,7 @@ slider > * {
  animation: slide 12s infinite;
  overflow: hidden;
 }
-
+/*
 slide:nth-child(1){
  left: 0%;
  animation-delay: -1s;
@@ -413,14 +413,38 @@ slide:nth-child(4){
  background-position: center;
 }
 
-slide p {
- font-family: Comfortaa;
- font-size: 70px;
- text-align: center;
- display: inline-block;
- width: 100%;
- margin-top: 340px;
- color: #fff;
+*/
+
+slide:nth-child(1){
+ left: 0%;
+ animation-delay: -1s;
+ background-image: url(img-icons/img/backgroundLandingPage.jpeg);
+ background-size: cover;
+ background-position: center;
+}
+
+slide:nth-child(2){
+ left: 100%;
+ animation-delay: 2s;
+ background-image: url(img-icons/img/backgroundLandingPage2.jpeg);
+ background-size: cover;
+ background-position: center;
+}
+
+slide:nth-child(3){
+ left: 100%;
+ animation-delay: 5s;
+ background-image: url(img-icons/img/backgroundLandingPage3.jpeg);
+ background-size: cover;
+ background-position: center;
+}
+
+slide:nth-child(4){
+ left: 100%;
+ animation-delay: 8s;
+ background-image: url(img-icons/img/backgroundLandingPage4.jpeg);
+ background-size: cover;
+ background-position: center;
 }
 
 @keyframes slide {
