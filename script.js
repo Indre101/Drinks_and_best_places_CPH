@@ -535,6 +535,20 @@ function appendDrinkCards(drinkObject, drinkCardContainer) {
 
   clnDrink.querySelector(".drinkName").textContent = drinkObject.drinkName;
 
+  // drinkObject.places.sort()
+
+  function compare(a, b) {
+    if (parseInt(a.drinkPrice) < parseInt(b.drinkPrice)) {
+      return -1;
+    }
+    if (parseInt(a.drinkPrice) > parseInt(b.drinkPrice)) {
+      return 1;
+    }
+    return 0;
+  }
+
+  drinkObject.places.sort(compare);
+
   drinkObject.places.forEach(placeObj => {
     let clnPlaceTempate = placeInfo.cloneNode(true);
 
